@@ -18,5 +18,3 @@ def hw_3_5_2(text_string):
     return new_string
 
 
-hw_3_5_2(text)
-# print(text_string)
