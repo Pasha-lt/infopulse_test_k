@@ -46,6 +46,7 @@ def hw_2_1_9(string_a):
     string_a = string_a.lstrip().rstrip()
     return string_a
 
+
 if __name__ == '__main__':
     assert hw_2_1_1(123) == True
     assert hw_2_1_1('wq12') == False

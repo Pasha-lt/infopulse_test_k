@@ -9,5 +9,3 @@ import pytest
 def test_hw_3_3_3(number_a, expected_result):
     res = hw_3_3_3(number_a)
     assert res == expected_result
-
-
