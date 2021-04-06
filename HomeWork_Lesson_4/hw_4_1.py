@@ -5,7 +5,8 @@ def hw_4_1_1(variable_a=False, variable_b=False):
 
     try:
         variable_a, variable_b = float(variable_a), float(variable_b)
-    except:
+    except ValueError as err:
+        print(err)
         print(str(variable_a) + str(variable_b))
         return str(variable_a) + str(variable_b)
     print(variable_a + variable_b)
