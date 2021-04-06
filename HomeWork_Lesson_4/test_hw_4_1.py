@@ -11,4 +11,3 @@ def test_hw_4_1(variables, expected_result):
     variable_a, variable_b = variables
     res = hw_4_1_1(variable_a, variable_b)
     assert res == expected_result
-
