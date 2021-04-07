@@ -8,6 +8,3 @@ def hw_3_2(string_a):
         print('d', string_a)
     return string_a
 
-
-def sumaa(a, b):
-    return a + b
