@@ -1,5 +1,5 @@
 def is_year_leap(year):
-    return bool(year % 4 == 0)
+    return (year % 4 == 0) and (year % 100 != 0) or (year % 400 == 0)
 
 
 def triangle(side_a, side_b, side_c):
