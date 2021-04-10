@@ -14,7 +14,7 @@ def song_la_la_la(how_strings, la_in_string, number=0):
     if number == 1:
         song = song[:-2] + '!'
 
-    return (song)
+    return song
 
 
 if __name__ == '__main__':
