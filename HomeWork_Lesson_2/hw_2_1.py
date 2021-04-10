@@ -48,43 +48,43 @@ def hw_2_1_9(string_a):
 
 
 if __name__ == '__main__':
-    assert hw_2_1_1(123) == True
-    assert hw_2_1_1('wq12') == False
+    assert hw_2_1_1('123') == True, '123 Ошибка'
+    assert hw_2_1_1('wq12') == False, 'ошибка'
     print('hw_2_1_1 done')
-    assert hw_2_1_2('') == 0
-    assert hw_2_1_2('zero') == 0
-    assert hw_2_1_2('one space') == 1
-    assert hw_2_1_2('we have three spases') == 3
-    assert hw_2_1_2('  we have six  spases') == 6
+    assert hw_2_1_2('') == 0, 'ошибка'
+    assert hw_2_1_2('zero') == 0, 'ошибка'
+    assert hw_2_1_2('one space') == 1, 'ошибка'
+    assert hw_2_1_2('we have three spases') == 3, 'ошибка'
+    assert hw_2_1_2('  we have six  spases') == 6, 'ошибка'
     print('hw_2_1_2 done')
-    assert hw_2_1_3('') == 0
-    assert hw_2_1_3('zero dot') == 0
-    assert hw_2_1_3('one dot.') == 1
-    assert hw_2_1_3('.we. have three   . dots') == 3
-    assert hw_2_1_3('we have six dots......') == 6
+    assert hw_2_1_3('') == 0, 'ошибка'
+    assert hw_2_1_3('zero dot') == 0, 'ошибка'
+    assert hw_2_1_3('one dot.') == 1, 'ошибка'
+    assert hw_2_1_3('.we. have three   . dots') == 3, 'ошибка'
+    assert hw_2_1_3('we have six dots......') == 6, 'ошибка'
     print('hw_2_1_3 done')
-    assert hw_2_1_4('Homework') == 100
+    assert hw_2_1_4('Homework') == 100, 'ошибка'
     print('hw_2_1_4 done')
-    assert hw_2_1_5('two words') == 'Two Words'
-    assert hw_2_1_5('I am going to travel round the world') == 'I Am Going To Travel Round The World'
-    assert hw_2_1_5('') == ''
-    assert hw_2_1_5('i') == 'I'
+    assert hw_2_1_5('two words') == 'Two Words', 'ошибка'
+    assert hw_2_1_5('I am going to travel round the world') == 'I Am Going To Travel Round The World', 'ошибка'
+    assert hw_2_1_5('') == '', 'ошибка'
+    assert hw_2_1_5('i') == 'I', 'ошибка'
     print('hw_2_1_5 done')
-    assert hw_2_1_6('My hobby is reading') == 'ing'
-    assert hw_2_1_6('My hobby is readnig') != 'ing'
-    assert hw_2_1_6('Do you mind me being here while you’re working???') == 'ing'
-    assert hw_2_1_6('ing') == 'ing'
-    assert hw_2_1_6('') != 'ing'
+    assert hw_2_1_6('My hobby is reading') == 'ing', 'ошибка'
+    assert hw_2_1_6('My hobby is readnig') != 'ing', 'ошибка'
+    assert hw_2_1_6('Do you mind me being here while you’re working???') == 'ing', 'ошибка'
+    assert hw_2_1_6('ing') == 'ing', 'ошибка'
+    assert hw_2_1_6('') != 'ing', 'ошибка'
     print('hw_2_1_6 done')
-    assert hw_2_1_7('jkladsa') == 3
-    assert hw_2_1_7('sfsd') == -1
-    assert hw_2_1_7('asfsd') == 0
+    assert hw_2_1_7('jkladsa') == 3, 'ошибка'
+    assert hw_2_1_7('sfsd') == -1, 'ошибка'
+    assert hw_2_1_7('asfsd') == 0, 'ошибка'
     print('hw_2_1_7 done')
-    assert hw_2_1_8('dsd fdfs fdsf') == ['dsd', 'fdfs', 'fdsf']
-    assert hw_2_1_8('   ') == []
-    assert hw_2_1_8('  2 ') == ['2']
+    assert hw_2_1_8('dsd fdfs fdsf') == ['dsd', 'fdfs', 'fdsf'], 'ошибка'
+    assert hw_2_1_8('   ') == [], 'ошибка'
+    assert hw_2_1_8('  2 ') == ['2'], 'ошибка'
     print('hw_2_1_8 done')
-    assert hw_2_1_9('    ffdsfdsf           f sdfdsf    ') == 'ffdsfdsf           f sdfdsf'
-    assert hw_2_1_9('the moon ! ') == 'the moon !'
-    print('hw_2_1_9 done')
+    assert hw_2_1_9('    ffdsfdsf           f sdfdsf    ') == 'ffdsfdsf           f sdfdsf', 'ошибка'
+    assert hw_2_1_9('the moon ! ') == 'the moon !', 'ошибка'
+    print('hw_2_1_9 done'), 'ошибка'
     print('happy end)')
