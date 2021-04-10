@@ -1,5 +1,4 @@
 def song_la_la_la(how_strings, la_in_string, number=0):
-    print(number, type(number))
     song = ''
     # 2
     string = ''
@@ -13,7 +12,6 @@ def song_la_la_la(how_strings, la_in_string, number=0):
         song = song[:-2] + '.'
     if number == 1:
         song = song[:-2] + '!'
-
     return song
 
 
