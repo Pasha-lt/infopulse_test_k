@@ -1,12 +1,19 @@
 class hw_error(Exception):
     """Класс ошибок, нужен для выведения наших ошибок"""
-    pass
+
+    def __str__(self):
+        return f'Класс с ошибками'
 
 
 class Person:
+    """Класс Персона"""
+
     def __init__(self, full_name, born_date):
         self.full_name = self.check_full_name(full_name)
         self.born_date = self.check_born_date(born_date)
+
+    def __str__(self):
+        return f'{self.full_name} - {self.born_date}'
 
     def check_full_name(self, full_name):
         """Метод проверяет правильность заполнения поля Имя и фамилия. В случае неправильного ввода возвращает ошибку"""
@@ -26,21 +33,29 @@ class Person:
             return born_date
 
     def only_name(self):
+        """Метод выводит только Имя"""
         return self.full_name.split()[0]
 
     def surname(self):
+        """Метод выводит только Фамилию"""
         return self.full_name.split()[0]
 
     def how_old(self, date=2021):
+        """Метод выводит сколько лет будет в конкретном году."""
         return date - self.born_date
 
 
 class Employee(Person):
+    """Класс сотрудник"""
+
     def __init__(self, full_name, born_date, position, work_experience, salary):
         super().__init__(full_name, born_date)
         self.position = position
         self.work_experience = self.check_work_experience(work_experience)
         self.salary = self.check_salary(salary)
+
+    def __str__(self):
+        return f'{self.full_name} - {self.position} - {self.salary}'
 
     def check_work_experience(self, work_experience):
         """Метод проверяет  правильность заполнения поля рабочий опыт. В случае отрицательного значения возвращает ошибку"""
@@ -73,6 +88,8 @@ class Employee(Person):
 
 
 class ITEmployee(Employee):
+    """Класс ИТ-сотрудник"""
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.skills = []
@@ -84,20 +101,3 @@ class ITEmployee(Employee):
     def new_skills(self, *args):
         """Метод добавляет несколько скилов"""
         self.skills.extend(args)
-
-
-p = Person('Bori Jonson', 2005)
-print(p.only_name())
-print(p.how_old())
-print(p.how_old(2031))
-t = Employee('Bori Jonson', 2005, 'developer', 6, 2323)
-print(t.position_and_level())
-print(t.salary)
-t.salary_up(1000)
-print(t.salary)
-d = ITEmployee('Bori Jonson', 2005, 'developer', 6, 2323)
-print(d.skills)
-d.new_skill('Умеет красить')
-print(d.skills)
-d.new_skills('Умеет красть', 'Умеет есть ногами')
-print(d.skills)
