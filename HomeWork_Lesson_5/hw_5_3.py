@@ -1,8 +1,6 @@
 import math
 import datetime
 
-now = datetime.datetime.now()
-
 
 class Rectangle:
     """Клас прямоугольник. Имеет методы для высчитывания площади и периметра."""
@@ -26,11 +24,12 @@ class Rectangle:
 class Student:
     """Класс студент Умеет добавлять оценки, высчитывать сколько уже студен на обучении, средний бал студента"""
 
-    def __init__(self, full_name, specialty, start_study, list_grade=[]):
+    def __init__(self, full_name, specialty, start_study, list_grate=()):
         self.full_name = full_name
         self.specialty = specialty
         self.start_study = start_study
-        self.list_grade = list_grade
+        # self.list_grade = list(*list_grate) #распаковка если оставить список
+        self.list_grade = list(list_grate)  # если кортеж можно приобразовывать
 
     def new_grade(self, grade):
         """Метод добавления оценки"""
@@ -41,14 +40,15 @@ class Student:
         return round(sum(self.list_grade) / len(self.list_grade), 1)
 
     def how_long(self):
+        now = datetime.datetime.now()
         """Метод который возвращает сколько лет уже учиться студент"""
-        return f'{now.year - self.start_study} год(а)'
+        return f'{now.year - self.start_study}'
 
     def __str__(self):
         return f'Студент - {self.full_name}, поступил в {self.start_study}, специальность - {self.specialty}, оценки - {self.list_grade} '
 
 
-class Point_on_the_map:
+class PointOnTheMap:
     """Класс Точки умеет высчитывать растояние к нулевой точки, растояние между точками, переводить в другую систему координат."""
 
     def __init__(self, point_x, point_y):
@@ -71,29 +71,32 @@ class Point_on_the_map:
         res = math.atan2(self.point_x, self.point_y)
         if (res < 0):
             res += 2 * math.pi
-        return f'Полярный угол - {round(res, 2)}'
+        return round(res, 2)
 
     def __str__(self):
         return f'Точка с координатами {self.point_y}{self.point_y}'
 
 
-r = Rectangle(2, 4)
-print(r.area())
-print(r.perimeter())
-print(r)
-print('\n', '#' * 40, '\n')
+if __name__ == '__main__':
+    r = Rectangle(2, 4)
+    print(r.area())
+    print(r.perimeter())
+    print(r)
+    print('\n', '#' * 40, '\n')
 
-s = Student('Иванов Иван', 'Радиотехник', 2018, [3, 4, 5, 5, 5, 5])
-print(s)
-s.new_grade(4)
-print(s)
-print(s.average_score())
-print(s.how_long())
-print('\n', '#' * 40, '\n')
+    s = Student('Иванов Иван', 'Радиотехник', 2019)
+    print(s)
+    tr = Student('Иванов Иван2', 'Радиотехник', 2018)
+    s.new_grade(4)
+    print(s)
+    print(tr)
+    print(s.average_score())
+    print(s.how_long())
+    print('\n', '#' * 40, '\n')
 
-p = Point_on_the_map(5, 4)
-print(p.distance_to_start_position())
-print(p.distance_between_two_points(2, 3))
-z = Point_on_the_map(0, 0)
-print(z - p)
-print(p.change_system_coordinat())
+    p = PointOnTheMap(5, 4)
+    print(p.distance_to_start_position())
+    print(p.distance_between_two_points(2, 3))
+    z = PointOnTheMap(0, 0)
+    print(z - p)
+    print(p.change_system_coordinat())

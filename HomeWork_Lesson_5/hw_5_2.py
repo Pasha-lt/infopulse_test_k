@@ -1,4 +1,7 @@
-class hw_error(Exception):
+import datetime
+
+
+class HwError(Exception):
     """Класс ошибок, нужен для выведения наших ошибок"""
 
     def __str__(self):
@@ -8,7 +11,7 @@ class hw_error(Exception):
 class Person:
     """Класс Персона"""
 
-    def __init__(self, full_name, born_date):
+    def __init__(self, full_name, born_date=None):
         self.full_name = self.check_full_name(full_name)
         self.born_date = self.check_born_date(born_date)
 
@@ -20,14 +23,15 @@ class Person:
         if len(full_name.split()) == 2:
             return full_name
         else:
-            raise hw_error(f'\n{"=" * 50}\n|| Вы должны передавать два слова: Имя и фамилию.||\n{"=" * 50}')
+            raise HwError(f'\n{"=" * 50}\n|| Вы должны передавать два слова: Имя и фамилию.||\n{"=" * 50}')
 
     def check_born_date(self, born_date):
         """Метод проверяет правильность заполнения поля Дня рождения. В случае если год больше 2021 или меньше 1900 возвращает ошибку"""
-        if born_date > 2021:
-            raise hw_error(f'\n{"=" * 50}\n||        Сожелеем но Вы еще не рождены.        ||\n{"=" * 50}')
+        now = datetime.datetime.now()
+        if born_date > now.year:
+            raise HwError(f'\n{"=" * 50}\n||        Сожелеем но Вы еще не рождены.        ||\n{"=" * 50}')
         elif born_date < 1900:
-            raise hw_error(
+            raise HwError(
                 f'\n{"=" * 65}\n||  Проверьте дату своего рождения она должна быть позже 1900  ||\n{"=" * 65}')
         else:
             return born_date
@@ -60,14 +64,14 @@ class Employee(Person):
     def check_work_experience(self, work_experience):
         """Метод проверяет  правильность заполнения поля рабочий опыт. В случае отрицательного значения возвращает ошибку"""
         if work_experience < 0:
-            raise hw_error(f'\n{"=" * 60}\n|| Опыт может быть нулевым, но не может быть отрицательным ||\n{"=" * 60}')
+            raise HwError(f'\n{"=" * 60}\n|| Опыт может быть нулевым, но не может быть отрицательным ||\n{"=" * 60}')
         else:
             return work_experience
 
     def check_salary(self, salary):
         """Метод проверяет правильность заполнения поля ЗП. В случае отрицательного значения возвращает ошибку"""
         if salary < 0:
-            raise hw_error(
+            raise HwError(
                 f'\n{"=" * 75}\n||   Мы Вам платим, а не Вы нам! Введите зарплату равну или больше нуля. ||\n{"=" * 75}')
         else:
             return salary
