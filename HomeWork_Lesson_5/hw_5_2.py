@@ -105,3 +105,12 @@ class ITEmployee(Employee):
     def new_skills(self, *args):
         """Метод добавляет несколько скилов"""
         self.skills.extend(args)
+
+if __name__ == '__main__':
+    ds = ITEmployee('Виктор Андреевич', 1999, 'риелтор', 3, 3000)
+    dt = ITEmployee('Виктор Атонович', 2000, 'Андроид', 4, 1500)
+    print(ds.skills)
+    print(dt.skills)
+    ds.new_skill(4)
+    print(ds.skills)
+    print(type(dt.skills))
