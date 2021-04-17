@@ -78,21 +78,21 @@ class PointOnTheMap:
 
 
 if __name__ == '__main__':
-    r = Rectangle(2, 4)
-    print(r.area())
-    print(r.perimeter())
-    print(r)
-    print('\n', '#' * 40, '\n')
-
-    s = Student('Иванов Иван', 'Радиотехник', 2019)
-    print(s)
-    tr = Student('Иванов Иван2', 'Радиотехник', 2018)
-    s.new_grade(4)
-    print(s)
-    print(tr)
-    print(s.average_score())
-    print(s.how_long())
-    print('\n', '#' * 40, '\n')
+    # r = Rectangle(2, 4)
+    # print(r.area())
+    # print(r.perimeter())
+    # print(r)
+    # print('\n', '#' * 40, '\n')
+    #
+    # s = Student('Иванов Иван', 'Радиотехник', 2019)
+    # print(s)
+    # tr = Student('Иванов Иван2', 'Радиотехник', 2018)
+    # s.new_grade(4)
+    # print(s)
+    # print(tr)
+    # print(s.average_score())
+    # print(s.how_long())
+    # print('\n', '#' * 40, '\n')
 
     p = PointOnTheMap(5, 4)
     print(p.distance_to_start_position())

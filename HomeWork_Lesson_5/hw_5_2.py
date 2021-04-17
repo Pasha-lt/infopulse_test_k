@@ -3,10 +3,7 @@ import datetime
 
 class HwError(Exception):
     """Класс ошибок, нужен для выведения наших ошибок"""
-
-    def __str__(self):
-        return f'Класс с ошибками'
-
+    pass
 
 class Person:
     """Класс Персона"""
@@ -64,6 +61,7 @@ class Employee(Person):
     def check_work_experience(self, work_experience):
         """Метод проверяет  правильность заполнения поля рабочий опыт. В случае отрицательного значения возвращает ошибку"""
         if work_experience < 0:
+            # print(f'\n{"=" * 60}\n|| Опыт может быть нулевым, но не может быть отрицательным ||\n{"=" * 60}')
             raise HwError(f'\n{"=" * 60}\n|| Опыт может быть нулевым, но не может быть отрицательным ||\n{"=" * 60}')
         else:
             return work_experience
@@ -107,7 +105,7 @@ class ITEmployee(Employee):
         self.skills.extend(args)
 
 if __name__ == '__main__':
-    ds = ITEmployee('Виктор Андреевич', 1999, 'риелтор', 3, 3000)
+    ds = ITEmployee('Виктор Андреевич', 1999, 'риелтор', -3, 3000)
     dt = ITEmployee('Виктор Атонович', 2000, 'Андроид', 4, 1500)
     print(ds.skills)
     print(dt.skills)
