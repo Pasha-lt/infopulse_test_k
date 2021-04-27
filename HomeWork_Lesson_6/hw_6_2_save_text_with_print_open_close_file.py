@@ -31,6 +31,7 @@ filew.close()
 # Save file with print
 filewp = open('R123.txt', 'w')
 print(my_song, file=filewp)
+filew.close()
 
 # use with
 # with open('123.txt', 'w')as file:

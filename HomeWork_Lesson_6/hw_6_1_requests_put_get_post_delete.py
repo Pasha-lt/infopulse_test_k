@@ -62,6 +62,7 @@ import requests
 #
 # ################################
 # Script 2
+
 # Создаем книгу
 payload = {'title': 'Son of the Wolf', 'author': 'Jack London'}
 r = requests.post('http://pulse-rest-testing.herokuapp.com/books', data=payload)
@@ -104,6 +105,9 @@ print('Книга удалилась успешно')
 d = requests.delete(f'http://pulse-rest-testing.herokuapp.com/roles/{id_person}')
 assert d.status_code == 204
 print('Персонаж удалилась успешно')
+
+
+
 ################################
 # # удаление циклом по айди
 # for number in range(1541, 1555):
