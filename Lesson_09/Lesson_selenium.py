@@ -44,7 +44,9 @@ def is_element_present(driver, by, locator):
     return True
 
 dr = webdriver.Chrome()
-wait = WebDriverWait(dr, 2)
+wait = WebDriverWait(dr, 2, poll_frequency=0.1)
+wait.until()
+wait.until_not()
 actions = webdriver.ActionChains(dr)
 ta = webdriver.TouchActions(dr)
 
@@ -89,6 +91,14 @@ dr.find_elements_by_xpath("//a[contains(text(), 'google')]")
 dr.find_element_by_xpath('//*[@id="gsr"]')
 
 
+dr.switch_to.window(dr.window_handles[1])
+print(dr.current_window_handle)
+time.sleep(3)
+dr.close()
+dr.switch_to.window(dr.window_handles[0])
+
+links[-1].click()
+# dr.quit()
 
 # dr.close()
 # dr.quit()
