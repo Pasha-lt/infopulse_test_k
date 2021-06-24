@@ -22,10 +22,11 @@ for _ in range(3):
 
 
 @pytest.mark.parametrize("input_text", input_data, ids=input_data)
-def test_post_create2(app, login_user, input_text):
+def test_post_create2(app, login_user, input_text, db, delete_post):
     old_number = len(app.dashboard_page.posts)
     app.dashboard_page.create_post(input_text)
     app.dashboard_page.wait_new_post_appear(old_number)
+    assert db.get_last_text_post() == input_text
     new_post = app.dashboard_page.posts[0]
     assert new_post.text == input_text
     assert new_post.user == login_user

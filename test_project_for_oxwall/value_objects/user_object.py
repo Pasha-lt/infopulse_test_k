@@ -2,7 +2,8 @@ from datetime import datetime
 
 
 class User:
-    def __init__(self, username="", password="", real_name="", email="", gender=None, birthday=None, is_admin=False):
+    def __init__(self, id=None, username="", password="", real_name="", email="", gender=None, birthday=None, is_admin=False):
+        self.id = id
         self.username = username
         self.password = password
         self.real_name = real_name
