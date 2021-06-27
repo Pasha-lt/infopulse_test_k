@@ -42,7 +42,7 @@ class OxwallDB:
                       VALUES("{user.id}", {user.gender}, "sex")"""
             cursor.execute(sql)
             sql = f"""INSERT `ow_base_question_data`(`userId`, `dateValue`, `questionName`)
-                      VALUES("{user.id}", {str(user.birthday)}, "birthdate")"""
+                      VALUES("{user.id}", "{str(user.birthday)}", "birthdate")"""
             cursor.execute(sql)
 
     def delete_user(self, user):
